@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+*.env.local
+
+# Cache
+cache/
+*.cache
+.cache/
+
+# Models (too large for git)
+models/*.pt
+models/*.bin
+models/*.safetensors
+
+# Voice prompts (download separately)
+voices/streaming_model/*.pt
+
+# Temp files
+temp_vibevoice/
+*.tmp
+*.temp
+
+# Audio files
+*.wav
+*.mp3
+*.flac
+!demo/*.wav
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Hugging Face cache
+.huggingface/
+
+# Reference audio (user-specific)
+reference_audio.wav
+
+

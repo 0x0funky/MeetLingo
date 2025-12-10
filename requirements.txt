@@ -1,0 +1,50 @@
+# Real-time AI Voice Translator
+# Python 3.10+ required with CUDA support
+
+# Audio Processing
+sounddevice>=0.4.6
+numpy>=1.24.0
+scipy>=1.11.0
+librosa>=0.10.1
+soundfile>=0.12.1
+
+# ASR - Speech Recognition
+faster-whisper>=1.0.0
+silero-vad>=4.0.0
+webrtcvad>=2.0.10
+
+# LLM APIs for Translation
+openai>=1.6.0
+google-generativeai>=0.3.0
+groq>=0.4.0
+httpx>=0.25.0
+
+# TTS - Microsoft VibeVoice-Realtime-0.5B
+# https://github.com/microsoft/VibeVoice
+torch>=2.1.0
+torchaudio>=2.1.0
+transformers>=4.36.0
+einops>=0.7.0
+phonemizer>=3.2.1
+
+# VibeVoice (install separately)
+# pip install git+https://github.com/microsoft/VibeVoice.git
+
+# WebSocket for streaming
+websockets>=12.0
+
+# Fallback TTS
+edge-tts>=6.1.9
+
+# GUI
+gradio>=4.10.0
+
+# Utilities
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+rich>=13.7.0
+asyncio-throttle>=1.0.2
+
+# For streaming
+aiohttp>=3.9.0
+
