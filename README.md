@@ -9,38 +9,38 @@
   <img src="https://img.shields.io/badge/Platform-Windows-lightgrey.svg" alt="Platform">
 </p>
 
-<h1 align="center">🎙️ MeetLingo</h1>
+<h1 align="center">MeetLingo</h1>
 
 <p align="center">
   <b>即時語音翻譯</b> — 專為線上會議設計的開源解決方案
 </p>
 
 <p align="center">
-  <a href="./README_EN.md">🌐 English</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-roadmap">Roadmap</a>
+  <a href="./README_EN.md">English</a> •
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#roadmap">Roadmap</a>
 </p>
 
 ---
 
-> 🚀 **目前 TTS 引擎**：Microsoft VibeVoice-Realtime-0.5B
+> **目前 TTS 引擎**：Microsoft VibeVoice-Realtime-0.5B
 > 
 > 未來將支援更多 TTS 方案（Edge-TTS、Coqui、GPT-SoVITS 等），打造最完整的開源即時翻譯工具！
 
 ---
 
-## ✨ Features
+## Features
 
-- 🗣️ **即時語音辨識** — 使用 Faster-Whisper (large-v3) 高精度 ASR
-- 🌐 **串流翻譯** — 支援 OpenAI / Gemini / Groq，邊聽邊翻譯
-- 🎭 **高品質語音合成** — 目前使用 Microsoft VibeVoice-Realtime（未來支援更多引擎）
-- ⚡ **低延遲** — 端到端延遲 < 1.5 秒
-- 🎯 **會議整合** — 透過 VB-CABLE 輸出到 Zoom / Teams / Meet
-- 🔓 **完全開源** — MIT License，歡迎貢獻！
+- **即時語音辨識** — 使用 Faster-Whisper (large-v3) 高精度 ASR
+- **串流翻譯** — 支援 OpenAI / Gemini / Groq，邊聽邊翻譯
+- **高品質語音合成** — 目前使用 Microsoft VibeVoice-Realtime（未來支援更多引擎）
+- **低延遲** — 端到端延遲 < 1.5 秒
+- **會議整合** — 透過 VB-CABLE 輸出到 Zoom / Teams / Meet
+- **完全開源** — MIT License，歡迎貢獻！
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
@@ -54,7 +54,7 @@
                   └─────────────────────────────────────────────┘
 ```
 
-## 📋 System Requirements
+## System Requirements
 
 | 項目 | 最低需求 | 建議配置 |
 |------|---------|---------|
@@ -64,7 +64,7 @@
 | **Python** | 3.10 | 3.11 |
 | **CUDA** | 11.8 | 12.1 |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & Install
 
@@ -143,7 +143,7 @@ python main.py
 
 開啟瀏覽器訪問 http://localhost:7860
 
-## 🎮 Usage
+## Usage
 
 ### Step 1: 設定
 1. 選擇 **輸入設備**（你的麥克風）
@@ -161,7 +161,7 @@ python main.py
 3. 對著麥克風說中文
 4. 系統會自動翻譯並用語音說英文！
 
-## ⚙️ Configuration
+## Configuration
 
 | 設定項 | 預設值 | 說明 |
 |--------|--------|------|
@@ -172,7 +172,7 @@ python main.py
 | LLM Model | `gpt-4o-mini` | 翻譯模型 |
 | Voice | `en-Carter_man` | TTS 語音 |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MeetLingo/
@@ -193,7 +193,7 @@ MeetLingo/
     └── gradio_app.py       # Gradio 介面
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### GPU 記憶體不足
 ```bash
@@ -213,18 +213,18 @@ python main.py
 2. 在 Windows 音效設定中確認 CABLE Input/Output 存在
 3. 確認選擇了正確的輸出設備
 
-## 🗺️ Roadmap
+## Roadmap
 
 我們的目標是打造**最完整的開源即時語音翻譯工具**，專為線上會議設計。
 
-### 現有功能 ✅
+### 現有功能
 - [x] Faster-Whisper ASR（多語言語音辨識）
 - [x] LLM 串流翻譯（OpenAI / Gemini / Groq）
 - [x] VibeVoice TTS（高品質語音合成）
 - [x] VB-CABLE 會議整合
 - [x] Gradio Web UI
 
-### 計劃中 🚧
+### 計劃中
 - [ ] **更多 TTS 引擎支援**
   - [ ] Edge-TTS（免費、低延遲）
   - [ ] Coqui TTS（開源、可自訂）
@@ -247,7 +247,7 @@ python main.py
   - [ ] macOS 支援
   - [ ] Linux 支援
 
-### 長期願景 🌟
+### 長期願景
 - 成為線上會議即時翻譯的首選開源方案
 - 支援 10+ 種 TTS 引擎
 - 支援 50+ 種語言
@@ -255,21 +255,21 @@ python main.py
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 歡迎貢獻！無論是：
-- 🐛 Bug 回報
-- 💡 功能建議
-- 🔧 Pull Request
-- 📖 文檔改進
+- Bug 回報
+- 功能建議
+- Pull Request
+- 文檔改進
 
 請查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解詳情。
 
-## 📄 License
+## License
 
 MIT License - 詳見 [LICENSE](LICENSE)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Microsoft VibeVoice](https://github.com/microsoft/VibeVoice) - TTS 引擎
 - [Faster-Whisper](https://github.com/guillaumekln/faster-whisper) - ASR 引擎
@@ -278,9 +278,9 @@ MIT License - 詳見 [LICENSE](LICENSE)
 ---
 
 <p align="center">
-  Made with ❤️ for the open-source community
+  Made with love for the open-source community
 </p>
 
 <p align="center">
-  ⭐ 如果這個專案對你有幫助，請給我們一個 Star！⭐
+  如果這個專案對你有幫助，請給我們一個 Star！
 </p>

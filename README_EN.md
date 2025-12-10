@@ -9,38 +9,38 @@
   <img src="https://img.shields.io/badge/Platform-Windows-lightgrey.svg" alt="Platform">
 </p>
 
-<h1 align="center">🎙️ MeetLingo</h1>
+<h1 align="center">MeetLingo</h1>
 
 <p align="center">
   <b>Real-time Voice Translation</b> — Open-source solution designed for online meetings
 </p>
 
 <p align="center">
-  <a href="./README.md">🌐 中文</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-roadmap">Roadmap</a>
+  <a href="./README.md">中文</a> •
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#roadmap">Roadmap</a>
 </p>
 
 ---
 
-> 🚀 **Current TTS Engine**: Microsoft VibeVoice-Realtime-0.5B
+> **Current TTS Engine**: Microsoft VibeVoice-Realtime-0.5B
 > 
 > More TTS solutions coming soon (Edge-TTS, Coqui, GPT-SoVITS, etc.) to build the most comprehensive open-source real-time translation tool!
 
 ---
 
-## ✨ Features
+## Features
 
-- 🗣️ **Real-time Speech Recognition** — High-accuracy ASR using Faster-Whisper (large-v3)
-- 🌐 **Streaming Translation** — Supports OpenAI / Gemini / Groq with live translation
-- 🎭 **High-quality Speech Synthesis** — Currently using Microsoft VibeVoice-Realtime (more engines coming)
-- ⚡ **Low Latency** — End-to-end latency < 1.5 seconds
-- 🎯 **Meeting Integration** — Output to Zoom / Teams / Meet via VB-CABLE
-- 🔓 **Fully Open Source** — MIT License, contributions welcome!
+- **Real-time Speech Recognition** — High-accuracy ASR using Faster-Whisper (large-v3)
+- **Streaming Translation** — Supports OpenAI / Gemini / Groq with live translation
+- **High-quality Speech Synthesis** — Currently using Microsoft VibeVoice-Realtime (more engines coming)
+- **Low Latency** — End-to-end latency < 1.5 seconds
+- **Meeting Integration** — Output to Zoom / Teams / Meet via VB-CABLE
+- **Fully Open Source** — MIT License, contributions welcome!
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
@@ -54,7 +54,7 @@
                   └─────────────────────────────────────────────┘
 ```
 
-## 📋 System Requirements
+## System Requirements
 
 | Item | Minimum | Recommended |
 |------|---------|-------------|
@@ -64,7 +64,7 @@
 | **Python** | 3.10 | 3.11 |
 | **CUDA** | 11.8 | 12.1 |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & Install
 
@@ -143,7 +143,7 @@ python main.py
 
 Open browser and visit http://localhost:7860
 
-## 🎮 Usage
+## Usage
 
 ### Step 1: Configuration
 1. Select **Input Device** (your microphone)
@@ -161,7 +161,7 @@ In Zoom / Teams / Meet:
 3. Speak into your microphone (in your language)
 4. The system will automatically translate and speak in the target language!
 
-## ⚙️ Configuration
+## Configuration
 
 | Setting | Default | Description |
 |---------|---------|-------------|
@@ -172,7 +172,7 @@ In Zoom / Teams / Meet:
 | LLM Model | `gpt-4o-mini` | Translation model |
 | Voice | `en-Carter_man` | TTS voice |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MeetLingo/
@@ -193,7 +193,7 @@ MeetLingo/
     └── gradio_app.py       # Gradio interface
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### GPU Out of Memory
 ```bash
@@ -213,18 +213,18 @@ python main.py
 2. Check Windows Sound settings for CABLE Input/Output
 3. Ensure correct output device is selected
 
-## 🗺️ Roadmap
+## Roadmap
 
 Our goal is to build the **most comprehensive open-source real-time voice translation tool** designed for online meetings.
 
-### Current Features ✅
+### Current Features
 - [x] Faster-Whisper ASR (multilingual speech recognition)
 - [x] LLM Streaming Translation (OpenAI / Gemini / Groq)
 - [x] VibeVoice TTS (high-quality speech synthesis)
 - [x] VB-CABLE meeting integration
 - [x] Gradio Web UI
 
-### Planned 🚧
+### Planned
 - [ ] **More TTS Engine Support**
   - [ ] Edge-TTS (free, low latency)
   - [ ] Coqui TTS (open source, customizable)
@@ -247,7 +247,7 @@ Our goal is to build the **most comprehensive open-source real-time voice transl
   - [ ] macOS support
   - [ ] Linux support
 
-### Long-term Vision 🌟
+### Long-term Vision
 - Become the go-to open-source solution for real-time meeting translation
 - Support 10+ TTS engines
 - Support 50+ languages
@@ -255,21 +255,21 @@ Our goal is to build the **most comprehensive open-source real-time voice transl
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Whether it's:
-- 🐛 Bug reports
-- 💡 Feature suggestions
-- 🔧 Pull Requests
-- 📖 Documentation improvements
+- Bug reports
+- Feature suggestions
+- Pull Requests
+- Documentation improvements
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-## 📄 License
+## License
 
 MIT License - See [LICENSE](LICENSE)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Microsoft VibeVoice](https://github.com/microsoft/VibeVoice) - TTS Engine
 - [Faster-Whisper](https://github.com/guillaumekln/faster-whisper) - ASR Engine
@@ -278,10 +278,9 @@ MIT License - See [LICENSE](LICENSE)
 ---
 
 <p align="center">
-  Made with ❤️ for the open-source community
+  Made with love for the open-source community
 </p>
 
 <p align="center">
-  ⭐ If this project helps you, please give us a Star! ⭐
+  If this project helps you, please give us a Star!
 </p>
-
