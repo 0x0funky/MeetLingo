@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner_en.png" alt="MeetLingo" width="600">
+  <img src="banner_en.jpg" alt="MeetLingo" width="600">
 </p>
 
 <p align="center">
