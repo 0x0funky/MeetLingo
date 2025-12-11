@@ -5,8 +5,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python">
   <img src="https://img.shields.io/badge/PyTorch-2.0+-red.svg" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Latency-800~1000ms-orange.svg" alt="Latency">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
-  <img src="https://img.shields.io/badge/Platform-Windows-lightgrey.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg" alt="Platform">
 </p>
 
 <h1 align="center">MeetLingo</h1>
@@ -36,7 +37,7 @@
 - **Real-time Speech Recognition** — High-accuracy ASR using Faster-Whisper (large-v3)
 - **Streaming Translation** — Supports OpenAI / Gemini / Groq with live translation
 - **High-quality Speech Synthesis** — Currently using Microsoft VibeVoice-Realtime (more engines coming)
-- **Low Latency** — End-to-end latency < 1.5 seconds
+- **Ultra-low Latency** — End-to-end latency only **800-1000ms**, near real-time conversation experience
 - **Meeting Integration** — Output to Zoom / Teams / Meet via VB-CABLE
 - **Fully Open Source** — MIT License, contributions welcome!
 
@@ -58,7 +59,7 @@
 
 | Item | Minimum | Recommended |
 |------|---------|-------------|
-| **OS** | Windows 10 | Windows 11 |
+| **OS** | Windows 10 / macOS 12+ / Ubuntu 20.04+ | Windows 11 / macOS 14+ / Ubuntu 22.04+ |
 | **GPU** | RTX 3060 (8GB VRAM) | RTX 4070+ (12GB VRAM) |
 | **RAM** | 16GB | 32GB |
 | **Python** | 3.10 | 3.11 |
@@ -223,6 +224,7 @@ Our goal is to build the **most comprehensive open-source real-time voice transl
 - [x] VibeVoice TTS (high-quality speech synthesis)
 - [x] VB-CABLE meeting integration
 - [x] Gradio Web UI
+- [x] Cross-platform support (Windows / macOS / Linux)
 
 ### Planned
 - [ ] **More TTS Engine Support**
@@ -243,9 +245,9 @@ Our goal is to build the **most comprehensive open-source real-time voice transl
   - [ ] Meeting recording + translation
   - [ ] API Server mode
   - [ ] Docker deployment
-- [ ] **Platform Support**
-  - [ ] macOS support
-  - [ ] Linux support
+- [ ] **Platform Optimization**
+  - [ ] Docker one-click deployment
+  - [ ] Cloud deployment solutions
 
 ### Long-term Vision
 - Become the go-to open-source solution for real-time meeting translation

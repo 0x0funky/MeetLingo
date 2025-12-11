@@ -5,8 +5,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue.svg" alt="Python">
   <img src="https://img.shields.io/badge/PyTorch-2.0+-red.svg" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Latency-800~1000ms-orange.svg" alt="Latency">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
-  <img src="https://img.shields.io/badge/Platform-Windows-lightgrey.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg" alt="Platform">
 </p>
 
 <h1 align="center">MeetLingo</h1>
@@ -36,7 +37,7 @@
 - **即時語音辨識** — 使用 Faster-Whisper (large-v3) 高精度 ASR
 - **串流翻譯** — 支援 OpenAI / Gemini / Groq，邊聽邊翻譯
 - **高品質語音合成** — 目前使用 Microsoft VibeVoice-Realtime（未來支援更多引擎）
-- **低延遲** — 端到端延遲 < 1.5 秒
+- **超低延遲** — 端到端延遲僅 **800-1000ms**，接近即時對話體驗
 - **會議整合** — 透過 VB-CABLE 輸出到 Zoom / Teams / Meet
 - **完全開源** — MIT License，歡迎貢獻！
 
@@ -58,7 +59,7 @@
 
 | 項目 | 最低需求 | 建議配置 |
 |------|---------|---------|
-| **OS** | Windows 10 | Windows 11 |
+| **OS** | Windows 10 / macOS 12+ / Ubuntu 20.04+ | Windows 11 / macOS 14+ / Ubuntu 22.04+ |
 | **GPU** | RTX 3060 (8GB VRAM) | RTX 4070+ (12GB VRAM) |
 | **RAM** | 16GB | 32GB |
 | **Python** | 3.10 | 3.11 |
@@ -223,6 +224,7 @@ python main.py
 - [x] VibeVoice TTS（高品質語音合成）
 - [x] VB-CABLE 會議整合
 - [x] Gradio Web UI
+- [x] 跨平台支援（Windows / macOS / Linux）
 
 ### 計劃中
 - [ ] **更多 TTS 引擎支援**
@@ -243,9 +245,9 @@ python main.py
   - [ ] 會議錄音 + 翻譯
   - [ ] API Server 模式
   - [ ] Docker 部署
-- [ ] **平台支援**
-  - [ ] macOS 支援
-  - [ ] Linux 支援
+- [ ] **平台優化**
+  - [ ] Docker 一鍵部署
+  - [ ] 雲端部署方案
 
 ### 長期願景
 - 成為線上會議即時翻譯的首選開源方案
