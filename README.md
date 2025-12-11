@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.jpg" alt="MeetLingo" width="600">
+  <img src="banner.jpg" alt="MeetLingo" width="100%">
 </p>
 
 <p align="center">
@@ -16,10 +16,10 @@
 </p>
 
 <p align="center">
+  <a href="https://meetlingo.vercel.app/">Website</a> •
   <a href="./README_EN.md">English</a> •
   <a href="#features">Features</a> •
   <a href="#quick-start">Quick Start</a> •
-  <a href="#installation">Installation</a> •
   <a href="#roadmap">Roadmap</a>
 </p>
 
