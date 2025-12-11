@@ -47,7 +47,10 @@ class TranslatorApp:
         # Logs and status
         self._asr_log: List[str] = []
         self._translation_log: List[str] = []
-        self._latency_log: List[float] = []
+        self._latency_log: List[float] = []  # 翻譯完成延遲
+        self._ttfa_log: List[float] = []     # Time-to-First-Audio
+        self._ttfa_start_time: Optional[float] = None  # ASR 結果時間
+        self._ttfa_waiting_for_audio = False  # 是否等待第一個音訊
     
     def get_audio_devices(self) -> Tuple[List[str], List[str]]:
         """Get lists of input and output audio devices"""
@@ -211,6 +214,13 @@ class TranslatorApp:
                         audio = audio.flatten()
                     
                     if len(audio) > 0:
+                        # Track TTFA (Time-to-First-Audio)
+                        if self._ttfa_waiting_for_audio and self._ttfa_start_time is not None:
+                            ttfa = (time.time() - self._ttfa_start_time) * 1000
+                            self._ttfa_log.append(ttfa)
+                            self._ttfa_waiting_for_audio = False
+                            console.print(f"[cyan][DEBUG TTFA] Time-to-First-Audio: {ttfa:.0f}ms[/cyan]")
+                        
                         duration_sec = len(audio) / tts_chunk.sample_rate
                         console.print(f"[green][DEBUG TTS] 播放音訊: {len(audio)} samples ({duration_sec:.2f}秒), text='{tts_chunk.text[:30]}...'[/green]")
                         self._audio_io.play_audio(audio)
@@ -235,12 +245,23 @@ class TranslatorApp:
             self._asr_log = []
             self._translation_log = []
             self._latency_log = []
+            self._ttfa_log = []
+            self._ttfa_start_time = None
+            self._ttfa_waiting_for_audio = False
             
             # Set up audio input callback BEFORE starting streams
             def on_audio_input(audio_chunk):
                 self._vad_asr.feed_audio(audio_chunk)
             
             self._audio_io.set_on_audio_input(on_audio_input)
+            
+            # Set up TTFA tracking callback - triggered when VAD detects end of speech
+            def on_speech_end():
+                self._ttfa_start_time = time.time()
+                self._ttfa_waiting_for_audio = True
+                console.print(f"[cyan][DEBUG TTFA] 語音結束，開始計時...[/cyan]")
+            
+            self._vad_asr.set_callbacks(on_speech_end=on_speech_end)
             
             # Start all modules
             self._audio_io.start()
@@ -296,13 +317,25 @@ class TranslatorApp:
         else:
             trans_text = "🌐 等待翻譯結果..."
         
-        # Latency info with more detail
+        # Build latency info
+        latency_parts = []
+        
+        # TTFA (Time-to-First-Audio) - 最重要的指標
+        if self._ttfa_log:
+            recent_ttfa = self._ttfa_log[-10:]
+            avg_ttfa = sum(recent_ttfa) / len(recent_ttfa)
+            min_ttfa = min(recent_ttfa)
+            max_ttfa = max(recent_ttfa)
+            latency_parts.append(f"TTFA: {avg_ttfa:.0f}ms (最小:{min_ttfa:.0f} / 最大:{max_ttfa:.0f})")
+        
+        # Translation latency
         if self._latency_log:
             recent = self._latency_log[-10:]
             avg_latency = sum(recent) / len(recent)
-            min_latency = min(recent)
-            max_latency = max(recent)
-            latency_text = f"平均: {avg_latency:.0f}ms | 最小: {min_latency:.0f}ms | 最大: {max_latency:.0f}ms | 樣本數: {len(self._latency_log)}"
+            latency_parts.append(f"翻譯完成: {avg_latency:.0f}ms")
+        
+        if latency_parts:
+            latency_text = " | ".join(latency_parts) + f" | 樣本數: {len(self._ttfa_log)}"
         else:
             latency_text = "⏳ 等待數據..."
         
@@ -420,7 +453,7 @@ def create_app() -> gr.Blocks:
                 
                 with gr.Row():
                     latency_display = gr.Textbox(
-                        label="⏱️ 延遲監控",
+                        label="⏱️ TTFA / 延遲監控 (Time-to-First-Audio)",
                         interactive=False,
                     )
                     refresh_status_btn = gr.Button("🔄 更新顯示")

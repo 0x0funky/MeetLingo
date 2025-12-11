@@ -229,7 +229,7 @@ class GroqTranslator:
     def __init__(
         self,
         api_key: str,
-        model: str = "llama-3.1-70b-versatile",
+        model: str = "llama-3.3-70b-versatile",  # 更新：3.1 已停用
         source_language: str = "Chinese",
         target_language: str = "English",
         temperature: float = 0.3,
@@ -317,7 +317,7 @@ class StreamingTranslator:
         default_models = {
             "openai": "gpt-4o-mini",
             "gemini": "gemini-2.0-flash",
-            "groq": "llama-3.1-70b-versatile",
+            "groq": "llama-3.3-70b-versatile",  # 更新：3.1 已停用
         }
         
         model = model or default_models.get(provider, "gpt-4o-mini")
